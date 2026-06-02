@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40">
+  <rect x="0" y="4" width="32" height="32" rx="8" fill="#7B5EA7"/>
+  <text x="16" y="27" text-anchor="middle" fill="#FFFFFF" font-family="Inter,Segoe UI,sans-serif" font-size="18" font-weight="800">FS</text>
+  <text x="42" y="27" fill="#F0F0F8" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700">FileSort</text>
+  <text x="102" y="27" fill="#7B5EA7" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="300">Pro</text>
+</svg>
