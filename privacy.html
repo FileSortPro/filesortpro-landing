@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Política de Privacidad de FileSort Pro">
-  <title>FileSort Pro — Política de Privacidad</title>
+  <meta name="description" content="Privacy Policy of FileSort Pro">
+  <title>FileSort Pro — Privacy Policy</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%237B5EA7'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EFS%3C/text%3E%3C/svg%3E">
 </head>
@@ -19,9 +19,9 @@
       </a>
 
       <nav class="nav-desktop">
-        <a href="/#features">Características</a>
-        <a href="/#pricing">Planes</a>
-        <a href="/#faq">FAQ</a>
+        <a href="/#features" data-es="Características" data-en="Features">Características</a>
+        <a href="/#pricing" data-es="Planes" data-en="Pricing">Planes</a>
+        <a href="/#faq" data-es="FAQ" data-en="FAQ">FAQ</a>
       </nav>
 
       <div class="header-actions">
@@ -41,88 +41,401 @@
     </div>
   </header>
 
-  <!-- ============================== CONTENT ============================== -->
-  <section class="legal-page">
+  <!-- ============================== CONTENT ES ============================== -->
+  <section class="legal-page" id="content-es">
     <div class="container">
       <h1>Política de Privacidad</h1>
-      <p class="last-updated">Última actualización: 1 de junio, 2026</p>
+      <p class="last-updated">Última actualización: 3 de junio, 2026</p>
 
-      <p>En FileSort Pro ("nosotros", "nuestro" o "la aplicación") nos tomamos muy en serio tu privacidad. Esta política explica qué datos recogemos, cómo los usamos y qué derechos tienes sobre ellos.</p>
+      <p>En FileSort Pro ("nosotros", "nuestro" o "la aplicación") nos tomamos muy en serio tu privacidad. Esta política explica qué datos recogemos, cómo los usamos, con quién los compartimos y qué derechos tienes sobre ellos. Al utilizar FileSort Pro, aceptas las prácticas descritas en este documento.</p>
 
-      <h2>1. Datos que recogemos</h2>
+      <h2>1. Información que Recopilamos</h2>
 
       <h3>1.1 Google OAuth</h3>
       <p>Cuando inicias sesión con Google, recogemos exclusivamente:</p>
       <ul>
-        <li><strong>Dirección de correo electrónico</strong> — para identificar tu cuenta.</li>
-        <li><strong>Nombre y foto de perfil</strong> — para personalizar la experiencia en la app.</li>
+        <li><strong>Dirección de correo electrónico</strong> — para identificar tu cuenta y mostrarla en la interfaz de la aplicación.</li>
+        <li><strong>Nombre y foto de perfil</strong> — para personalizar tu experiencia dentro de la app.</li>
       </ul>
-      <p>No solicitamos ni accedemos a tu lista de contactos, correos ni ningún otro dato de tu cuenta de Google.</p>
+      <p>No solicitamos ni accedemos a tu lista de contactos, correos electrónicos, Google Drive ni ningún otro dato de tu cuenta de Google. La autenticación se realiza mediante OAuth 2.0 con PKCE (Proof Key for Code Exchange), un estándar seguro que no requiere que compartas tu contraseña con nosotros.</p>
 
-      <h3>1.2 Supabase (Base de datos)</h3>
-      <p>Almacenamos de forma segura en Supabase:</p>
+      <h3>1.2 Identificador Único de Hardware (HWID)</h3>
+      <p>Generamos un identificador único mediante un <strong>hash SHA-256</strong> de los siguientes componentes del sistema:</p>
       <ul>
-        <li>Preferencias de organización (perfil seleccionado, categorías personalizadas).</li>
-        <li>Historial de sesiones de clasificación (fechas, número de archivos, carpeta de origen).</li>
-        <li>Tipo de plan y estado de suscripción.</li>
+        <li>UUID del sistema (tarjeta madre/chasis).</li>
+        <li>Número de serie de la tarjeta madre.</li>
+        <li>Identificador del procesador (CPU).</li>
+        <li>Número de serie del disco duro principal.</li>
+        <li>GUID de instalación de Windows (como respaldo).</li>
       </ul>
-      <p>Esta información se utiliza exclusivamente para optimizar la funcionalidad de la app y mejorar tu experiencia.</p>
+      <p>Este identificador se utiliza para la <strong>gestión de licencias</strong> (control de dispositivos autorizados por plan), la <strong>prevención de abuso</strong> del periodo de prueba (trial) y la <strong>seguridad</strong> de la cuenta. El HWID es un hash irreversible: no podemos reconstruir los identificadores originales a partir de él.</p>
 
-      <h3>1.3 Whop (Procesador de pagos)</h3>
-      <p>Todos los pagos se procesan a través de Whop. A través de su webhook recibimos:</p>
+      <h3>1.3 Versión del Sistema Operativo</h3>
+      <p>Recopilamos la versión de Windows en la que se ejecuta la aplicación para fines de compatibilidad, diagnóstico y control de acceso por dispositivo.</p>
+
+      <h3>1.4 Dirección IP y Agente de Usuario</h3>
+      <p>Cuando la aplicación se comunica con nuestros servidores (autenticación, heartbeat, sincronización), nuestra infraestructura en Supabase registra automáticamente tu <strong>dirección IP</strong> y <strong>agente de usuario</strong> como parte de los registros de sesión. Estos datos se utilizan exclusivamente para fines de seguridad y gestión de sesiones.</p>
+
+      <h3>1.5 Preferencias y Configuración</h3>
+      <p>Almacenamos tus preferencias de la aplicación, que incluyen:</p>
+      <ul>
+        <li>Idioma de la interfaz (español, inglés, portugués, chino).</li>
+        <li>Tema visual (oscuro/claro).</li>
+        <li>Perfil de uso seleccionado (automático, freelancer, pyme, legal, marketing, académico, gamer, desarrollador, ingeniero).</li>
+        <li>Configuración de escaneo recursivo de subcarpetas.</li>
+      </ul>
+      <p>Estos datos se sincronizan con la nube para que tus preferencias estén disponibles en todos tus dispositivos autorizados.</p>
+
+      <h3>1.6 Datos de Clasificación</h3>
+      <p>Para realizar la clasificación inteligente de archivos, la aplicación envía la siguiente información a la <strong>Groq API</strong> (servicio de inteligencia artificial de terceros):</p>
+      <ul>
+        <li><strong>Nombres de archivo</strong> con sus rutas relativas dentro de la carpeta organizada.</li>
+        <li><strong>Fragmentos de texto</strong> de hasta 400 caracteres de los primeros bytes de archivos de texto (.txt, .md, .json, .csv, .log).</li>
+        <li><strong>Nombres de carpetas vecinas</strong> para análisis de contexto espacial.</li>
+        <li><strong>Nombre de la carpeta base</strong> que se está organizando.</li>
+      </ul>
+      <p><strong>No se envía el contenido completo de ningún archivo.</strong> Solo archivos de texto plano (no PDFs, imágenes, ejecutables, etc.) son muestreados parcialmente. Los datos enviados a Groq se procesan de forma transitoria y <strong>no son almacenados</strong> por FileSort Pro ni por Groq más allá de lo necesario para completar la clasificación. Consulta la política de privacidad de Groq en <a href="https://groq.com" target="_blank" rel="noopener">groq.com</a> para más detalles.</p>
+
+      <h3>1.7 Información de Suscripción</h3>
+      <p>A través de <strong>Whop</strong> (nuestro procesador de pagos), recibimos únicamente:</p>
       <ul>
         <li>Confirmación de pago exitoso o cancelado.</li>
-        <li>Tipo de plan adquirido (Essential, Elite, Ultimate) y modalidad (mensual o lifetime).</li>
+        <li>Tipo de plan adquirido (Essential, Elite, Ultimate).</li>
+        <li>Modalidad de pago (suscripción mensual o pago único de por vida).</li>
+        <li>Identificador de membresía de Whop.</li>
       </ul>
-      <p><strong>No almacenamos ni tenemos acceso a tu información financiera</strong> (número de tarjeta, dirección de facturación, etc.). Whop actúa como controlador independiente de esos datos.</p>
+      <p><strong>No almacenamos ni tenemos acceso a tu información financiera</strong> (número de tarjeta, dirección de facturación, CVV, etc.). Whop actúa como controlador independiente de esos datos. Consulta su política de privacidad en <a href="https://whop.com" target="_blank" rel="noopener">whop.com</a>.</p>
 
-      <h3>1.4 Datos de uso y preferencias</h3>
-      <p>La app recoge información sobre tu perfil de trabajo detectado (Freelancer, PYME, Legal, etc.) y las categorías de archivos que clasificas. Estos datos son anónimos y se usan únicamente para mejorar la precisión de la clasificación automática.</p>
-
-      <h2>2. Cómo usamos tus datos</h2>
+      <h3>1.8 Datos Almacenados Localmente</h3>
+      <p>La aplicación almacena los siguientes datos en tu ordenador:</p>
       <ul>
-        <li>Autenticación y gestión de tu cuenta.</li>
-        <li>Personalización de la clasificación según tu perfil y preferencias.</li>
-        <li>Verificación de estado de suscripción para determinar el plan activo.</li>
-        <li>Mejora continua de los algoritmos de clasificación y detección de perfiles.</li>
+        <li><strong>Token de sesión</strong> — cifrado con DPAPI de Windows en <code>%APPDATA%\FileSortPro\session.json</code>. Contiene el token de acceso y refresh token necesarios para mantener la sesión iniciada.</li>
+        <li><strong>Configuración local</strong> — en <code>%APPDATA%\FileSortPro\settings.json</code> y una base de datos SQLite en la misma carpeta.</li>
+        <li><strong>Datos de prueba (trial)</strong> — cifrados con DPAPI en <code>%LOCALAPPDATA%\FileSortPro\trial.dat</code> y en el Registro de Windows (<code>HKCU\SOFTWARE\FileSortPro</code>).</li>
+        <li><strong>Historial de sesiones de organización</strong> — en <code>~\.filesort_history.json</code> (tu directorio de usuario). Incluye nombres de archivo, rutas de origen y destino, tamaño y extensión.</li>
+        <li><strong>Registro de deshacer (undo)</strong> — en <code>{carpeta_organizada}\.filesort_undo.json</code>. Contiene las rutas originales y de destino de los archivos movidos en la última sesión.</li>
+        <li><strong>Registro de uso de API</strong> — en <code>%APPDATA%\FileSortPro\rate_usage.json</code>. Contiene contadores de uso de la API de Groq para control de límites por plan.</li>
       </ul>
-      <p>No utilizamos tus datos para publicidad dirigida ni los compartimos con terceros con fines comerciales.</p>
 
-      <h2>3. No recogemos datos financieros</h2>
-      <p>Como se indica en el punto 1.3, FileSort Pro no recoge, almacena ni procesa ningún dato financiero. Todos los pagos son gestionados íntegramente por Whop bajo sus propios términos y políticas de privacidad.</p>
-
-      <h2>4. Compartición de datos</h2>
-      <p>No vendemos, alquilamos ni compartimos tus datos personales con terceros, excepto:</p>
+      <h3>1.9 Información que NO Recopilamos</h3>
+      <p>Explícitamente, FileSort Pro <strong>no recopila</strong>:</p>
       <ul>
-        <li><strong>Whop</strong> — para verificar el estado de tu suscripción (solo datos de plan y estado).</li>
-        <li><strong>Supabase</strong> — como proveedor de infraestructura de base de datos.</li>
-        <li><strong>Google</strong> — únicamente para la autenticación OAuth (no compartimos datos adicionales).</li>
-        <li>Cuando sea requerido por ley o autoridad competente.</li>
+        <li>Contenido completo de archivos del usuario (solo fragmentos de hasta 400 caracteres de archivos de texto).</li>
+        <li>Información financiera o de pago (gestionada íntegramente por Whop).</li>
+        <li>Claves de API en texto plano (siempre cifradas tanto en tránsito como en reposo).</li>
+        <li>Pulsaciones de teclado, movimientos del ratón o interacciones de la interfaz.</li>
+        <li>Analíticas de uso, telemetría o cookies de seguimiento.</li>
+        <li>Lista de contactos, correos electrónicos, archivos de Google Drive ni ningún otro dato de servicios de terceros no especificado aquí.</li>
       </ul>
 
-      <h2>5. Seguridad</h2>
-      <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tus datos, incluyendo cifrado en tránsito (TLS) y en reposo, así como controles de acceso estrictos a nuestra base de datos.</p>
+      <h2>2. Cómo Usamos Tus Datos</h2>
+      <p>Utilizamos los datos recopilados exclusivamente para:</p>
+      <ul>
+        <li><strong>Autenticación y gestión de cuenta</strong> — iniciar sesión, mantener la sesión activa y gestionar dispositivos autorizados.</li>
+        <li><strong>Clasificación inteligente de archivos</strong> — enviar nombres y fragmentos a Groq API para determinar la categoría más adecuada.</li>
+        <li><strong>Verificación de licencia y suscripción</strong> — validar el plan activo y aplicar los límites correspondientes (rate limiting).</li>
+        <li><strong>Sincronización de preferencias</strong> — mantener tus ajustes consistentes entre dispositivos.</li>
+        <li><strong>Prevención de abuso y seguridad</strong> — detectar manipulación del sistema de trial, controlar el número de dispositivos por plan y proteger tu cuenta contra accesos no autorizados.</li>
+        <li><strong>Mejora continua</strong> — analizar patrones de uso anónimos para mejorar la precisión de la clasificación y la experiencia general.</li>
+      </ul>
+      <p>No utilizamos tus datos para publicidad dirigida, venta a terceros ni ningún otro propósito comercial no especificado en esta política.</p>
 
-      <h2>6. Tus derechos</h2>
-      <p>Tienes derecho a:</p>
+      <h2>3. Compartición con Terceros</h2>
+      <p>Compartimos tus datos únicamente con los siguientes proveedores de servicios, estrictamente necesarios para el funcionamiento de la aplicación:</p>
+
+      <table>
+        <tr>
+          <th>Proveedor</th>
+          <th>Datos Compartidos</th>
+          <th>Propósito</th>
+          <th>Más Información</th>
+        </tr>
+        <tr>
+          <td><strong>Groq Inc.</strong></td>
+          <td>Nombres de archivo, fragmentos de texto (&lt;400 caracteres), nombres de carpeta</td>
+          <td>Clasificación por inteligencia artificial (modelo llama-3.3-70b)</td>
+          <td><a href="https://groq.com" target="_blank" rel="noopener">groq.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Supabase Inc.</strong></td>
+          <td>Email, HWID, preferencias, historial de sesiones, tipo de plan, IP, agente de usuario</td>
+          <td>Autenticación, base de datos, almacenamiento en nube, Edge Functions</td>
+          <td><a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Whop Inc.</strong></td>
+          <td>Solo confirmación de pago y tipo de plan (nosotros no enviamos datos — Whop nos notifica)</td>
+          <td>Procesamiento de pagos y gestión de suscripciones</td>
+          <td><a href="https://whop.com/privacy" target="_blank" rel="noopener">whop.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google LLC</strong></td>
+          <td>Solicitamos email, nombre y foto de perfil (tú decides qué compartir al iniciar sesión)</td>
+          <td>Autenticación OAuth 2.0</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+        </tr>
+      </table>
+
+      <p>No vendemos, alquilamos ni compartimos tus datos personales con ningún otro tercero. Solo divulgaremos información cuando sea requerido por ley o autoridad competente.</p>
+
+      <h2>4. Transferencias Internacionales de Datos</h2>
+      <p>Tus datos pueden ser transferidos y procesados en países distintos al tuyo, incluyendo <strong>Estados Unidos</strong>, donde están ubicados los servidores de Supabase (infraestructura en AWS, Google Cloud) y Groq. Al utilizar FileSort Pro, consientes esta transferencia. Nos aseguramos de que todos nuestros proveedores cumplan con marcos legales adecuados (como el Data Privacy Framework UE-EE.UU. o Cláusulas Contractuales Tipo) para la protección de datos personales.</p>
+
+      <h2>5. Retención de Datos</h2>
+      <p>Conservamos tus datos durante los siguientes períodos:</p>
+      <ul>
+        <li><strong>Datos de cuenta</strong> (email, HWID, preferencias): hasta que solicites la eliminación de tu cuenta.</li>
+        <li><strong>Registros de sesión</strong> (IP, agente de usuario): hasta que la sesión sea revocada o expire.</li>
+        <li><strong>Historial de uso de API</strong> (rate limiting): 180 días en tu ordenador local.</li>
+        <li><strong>Datos enviados a Groq</strong>: no son almacenados por nosotros. Groq puede retenerlos según su propia política.</li>
+        <li><strong>Datos locales</strong> (historial, undo, trial): hasta que tú los elimines manualmente o desinstales la aplicación.</li>
+      </ul>
+
+      <h2>6. Eliminación de Datos</h2>
+      <p>Tienes derecho a solicitar la eliminación de tus datos personales en cualquier momento. Para ello:</p>
+      <ol>
+        <li>Si tienes una suscripción activa, cancélala primero a través de Whop.</li>
+        <li>Envía un correo a <a href="mailto:support@filesort.pro">support@filesort.pro</a> solicitando la eliminación de tus datos.</li>
+        <li>Alternativamente, puedes cerrar sesión y eliminar los datos locales manualmente desde <code>%APPDATA%\FileSortPro</code> y <code>~\.filesort_history.json</code>.</li>
+      </ol>
+      <p>Procesaremos tu solicitud en un plazo máximo de 30 días. Ten en cuenta que la eliminación de la cuenta puede afectar tu acceso a la aplicación y sus funcionalidades.</p>
+
+      <h2>7. Seguridad</h2>
+      <p>Implementamos las siguientes medidas de seguridad para proteger tus datos:</p>
+      <ul>
+        <li><strong>Cifrado en tránsito</strong>: todas las comunicaciones con nuestros servidores y servicios de terceros utilizan TLS 1.2/1.3 (HTTPS).</li>
+        <li><strong>Cifrado en reposo</strong>: los tokens de sesión y datos de trial se cifran con DPAPI (Windows CryptProtectData). Las claves de API de Groq se cifran con XOR + base64 usando una clave maestra.</li>
+        <li><strong>Autenticación segura</strong>: OAuth 2.0 con PKCE para inicio de sesión, sin contraseñas compartidas.</li>
+        <li><strong>Control de acceso</strong>: las Edge Functions de Supabase validan cada solicitud mediante JWT. Solo el usuario autenticado puede acceder a sus propios datos.</li>
+        <li><strong>Anti-manipulación</strong>: el sistema de trial almacena datos en tres ubicaciones independientes (archivo local, registro de Windows y servidor) y detecta discrepancias.</li>
+        <li><strong>Rate limiting</strong>: límites de uso por plan para prevenir abuso del servicio de IA.</li>
+      </ul>
+
+      <h2>8. Tus Derechos</h2>
+      <p>Según el Reglamento General de Protección de Datos (GDPR) y leyes aplicables, tienes derecho a:</p>
       <ul>
         <li><strong>Acceder</strong> a los datos personales que tenemos sobre ti.</li>
-        <li><strong>Solicitar la corrección</strong> de datos inexactos.</li>
-        <li><strong>Solicitar la eliminación</strong> de tus datos y cuenta.</li>
-        <li><strong>Exportar</strong> tus datos en un formato estructurado.</li>
+        <li><strong>Solicitar la corrección</strong> de datos inexactos o incompletos.</li>
+        <li><strong>Solicitar la eliminación</strong> de tus datos ("derecho al olvido").</li>
+        <li><strong>Limitar el tratamiento</strong> de tus datos en ciertas circunstancias.</li>
+        <li><strong>Exportar</strong> tus datos en un formato estructurado y legible (portabilidad).</li>
         <li><strong>Revocar</strong> el acceso de Google OAuth en cualquier momento desde tu cuenta de Google.</li>
+        <li><strong>Presentar una reclamación</strong> ante tu autoridad de protección de datos local.</li>
       </ul>
-      <p>Para ejercer cualquiera de estos derechos, escríbenos a <a href="mailto:contact@filesort.pro" class="contact-email">contact@filesort.pro</a>.</p>
+      <p>Para ejercer cualquiera de estos derechos, escríbenos a <a href="mailto:support@filesort.pro">support@filesort.pro</a>.</p>
 
-      <h2>7. Cambios a esta política</h2>
-      <p>Podemos actualizar esta política de privacidad ocasionalmente. Notificaremos los cambios significativos a través de la app o por correo electrónico. La fecha de la última actualización aparece al inicio de esta página.</p>
+      <h2>9. Menores de Edad</h2>
+      <p>FileSort Pro no está dirigida a menores de 13 años (o 16 años en la Unión Europea). No recopilamos intencionadamente datos personales de menores. Si descubrimos que hemos recopilado datos de un menor sin consentimiento parental, los eliminaremos inmediatamente. Si eres padre/madre o tutor y crees que tu hijo nos ha proporcionado datos, contáctanos en <a href="mailto:support@filesort.pro">support@filesort.pro</a>.</p>
 
-      <h2>8. Contacto</h2>
-      <p>Si tienes preguntas sobre esta política de privacidad, puedes contactarnos en:</p>
+      <h2>10. Cambios a Esta Política</h2>
+      <p>Podemos actualizar esta política de privacidad ocasionalmente. Si hay cambios significativos, te notificaremos a través de la aplicación, solicitando tu revisión y aceptación. La fecha de la última actualización aparece al inicio de esta página. Te recomendamos revisar esta política periódicamente.</p>
+
+      <h2>11. Contacto</h2>
+      <p>Si tienes preguntas, inquietudes o solicitudes sobre esta política de privacidad o sobre el tratamiento de tus datos personales, puedes contactarnos:</p>
       <p>
         <strong>Email:</strong> <a href="mailto:contact@filesort.pro" class="contact-email">contact@filesort.pro</a><br>
         <strong>Soporte:</strong> <a href="mailto:support@filesort.pro" class="contact-email">support@filesort.pro</a>
       </p>
+      <p>También puedes visitar nuestros <a href="terms.html">Términos y Condiciones</a> para más información sobre el uso de la aplicación.</p>
+    </div>
+  </section>
+
+  <!-- ============================== CONTENT EN ============================== -->
+  <section class="legal-page" id="content-en" style="display:none">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="last-updated">Last updated: June 3, 2026</p>
+
+      <p>At FileSort Pro ("we", "our", or "the application"), we take your privacy seriously. This policy explains what data we collect, how we use it, who we share it with, and what rights you have regarding your information. By using FileSort Pro, you agree to the practices described in this document.</p>
+
+      <h2>1. Information We Collect</h2>
+
+      <h3>1.1 Google OAuth</h3>
+      <p>When you sign in with Google, we exclusively collect:</p>
+      <ul>
+        <li><strong>Email address</strong> — to identify your account and display it in the application interface.</li>
+        <li><strong>Name and profile picture</strong> — to personalize your experience within the app.</li>
+      </ul>
+      <p>We do not request or access your contact list, emails, Google Drive, or any other data from your Google account. Authentication is performed using OAuth 2.0 with PKCE (Proof Key for Code Exchange), a secure standard that does not require you to share your password with us.</p>
+
+      <h3>1.2 Hardware Identifier (HWID)</h3>
+      <p>We generate a unique identifier using a <strong>SHA-256 hash</strong> of the following system components:</p>
+      <ul>
+        <li>System UUID (motherboard/chassis).</li>
+        <li>Motherboard serial number.</li>
+        <li>Processor ID (CPU).</li>
+        <li>Primary disk drive serial number.</li>
+        <li>Windows installation GUID (as fallback).</li>
+      </ul>
+      <p>This identifier is used for <strong>license management</strong> (device limits per plan), <strong>abuse prevention</strong> (trial period enforcement), and <strong>account security</strong>. The HWID is an irreversible hash — we cannot reconstruct the original identifiers from it.</p>
+
+      <h3>1.3 Operating System Version</h3>
+      <p>We collect the Windows version on which the application runs for compatibility, diagnostic, and per-device access control purposes.</p>
+
+      <h3>1.4 IP Address and User Agent</h3>
+      <p>When the application communicates with our servers (authentication, heartbeat, synchronization), our Supabase infrastructure automatically logs your <strong>IP address</strong> and <strong>user agent</strong> as part of session records. This data is used exclusively for security and session management purposes.</p>
+
+      <h3>1.5 Preferences and Settings</h3>
+      <p>We store your application preferences, which include:</p>
+      <ul>
+        <li>Interface language (Spanish, English, Portuguese, Chinese).</li>
+        <li>Visual theme (dark/light).</li>
+        <li>Selected usage profile (auto, freelancer, SME, legal, marketing, academic, gamer, developer, engineer).</li>
+        <li>Recursive subfolder scanning configuration.</li>
+      </ul>
+      <p>This data is synced to the cloud so your preferences are available across all your authorized devices.</p>
+
+      <h3>1.6 Classification Data</h3>
+      <p>To perform intelligent file classification, the application sends the following information to the <strong>Groq API</strong> (third-party artificial intelligence service):</p>
+      <ul>
+        <li><strong>File names</strong> with their relative paths within the organized folder.</li>
+        <li><strong>Text snippets</strong> of up to 400 characters from the first bytes of text files (.txt, .md, .json, .csv, .log).</li>
+        <li><strong>Neighboring folder names</strong> for spatial context analysis.</li>
+        <li><strong>Base folder name</strong> being organized.</li>
+      </ul>
+      <p><strong>No full file contents are ever sent.</strong> Only plain text files (not PDFs, images, executables, etc.) are partially sampled. Data sent to Groq is processed transiently and <strong>is not stored</strong> by FileSort Pro or Groq beyond what is necessary to complete the classification. See Groq's privacy policy at <a href="https://groq.com" target="_blank" rel="noopener">groq.com</a> for details.</p>
+
+      <h3>1.7 Subscription Information</h3>
+      <p>Through <strong>Whop</strong> (our payment processor), we only receive:</p>
+      <ul>
+        <li>Successful or canceled payment confirmation.</li>
+        <li>Purchased plan type (Essential, Elite, Ultimate).</li>
+        <li>Payment mode (monthly subscription or one-time lifetime payment).</li>
+        <li>Whop membership identifier.</li>
+      </ul>
+      <p><strong>We do not store or have access to your financial information</strong> (credit card number, billing address, CVV, etc.). Whop acts as an independent data controller for that information. See their privacy policy at <a href="https://whop.com" target="_blank" rel="noopener">whop.com</a>.</p>
+
+      <h3>1.8 Locally Stored Data</h3>
+      <p>The application stores the following data on your computer:</p>
+      <ul>
+        <li><strong>Session token</strong> — encrypted with Windows DPAPI at <code>%APPDATA%\FileSortPro\session.json</code>. Contains the access and refresh tokens needed to keep you logged in.</li>
+        <li><strong>Local settings</strong> — at <code>%APPDATA%\FileSortPro\settings.json</code> and an SQLite database in the same folder.</li>
+        <li><strong>Trial data</strong> — encrypted with DPAPI at <code>%LOCALAPPDATA%\FileSortPro\trial.dat</code> and in the Windows Registry (<code>HKCU\SOFTWARE\FileSortPro</code>).</li>
+        <li><strong>Session organization history</strong> — at <code>~\.filesort_history.json</code> (your user directory). Includes file names, source and destination paths, file size, and extension.</li>
+        <li><strong>Undo log</strong> — at <code>{organized_folder}\.filesort_undo.json</code>. Contains the original and destination paths of files moved in the last session.</li>
+        <li><strong>API usage log</strong> — at <code>%APPDATA%\FileSortPro\rate_usage.json</code>. Contains Groq API usage counters for plan-based rate limiting.</li>
+      </ul>
+
+      <h3>1.9 Information We Do NOT Collect</h3>
+      <p>Explicitly, FileSort Pro does <strong>NOT</strong> collect:</p>
+      <ul>
+        <li>Full file contents (only up to 400-character snippets from text files).</li>
+        <li>Financial or payment information (entirely handled by Whop).</li>
+        <li>API keys in plain text (always encrypted both in transit and at rest).</li>
+        <li>Keystrokes, mouse movements, or UI interactions.</li>
+        <li>Usage analytics, telemetry, or tracking cookies.</li>
+        <li>Contact lists, emails, Google Drive files, or any other third-party service data not specified herein.</li>
+      </ul>
+
+      <h2>2. How We Use Your Data</h2>
+      <p>We use the collected data exclusively for:</p>
+      <ul>
+        <li><strong>Account authentication and management</strong> — logging in, maintaining session state, and managing authorized devices.</li>
+        <li><strong>Intelligent file classification</strong> — sending file names and snippets to Groq API for category determination.</li>
+        <li><strong>License and subscription verification</strong> — validating the active plan and enforcing corresponding rate limits.</li>
+        <li><strong>Preferences synchronization</strong> — keeping your settings consistent across devices.</li>
+        <li><strong>Abuse prevention and security</strong> — detecting trial system tampering, monitoring device limits per plan, and protecting your account against unauthorized access.</li>
+        <li><strong>Continuous improvement</strong> — analyzing anonymous usage patterns to improve classification accuracy and overall experience.</li>
+      </ul>
+      <p>We do not use your data for targeted advertising, sale to third parties, or any other commercial purpose not specified in this policy.</p>
+
+      <h2>3. Data Sharing with Third Parties</h2>
+      <p>We share your data only with the following service providers, strictly necessary for the application to function:</p>
+
+      <table>
+        <tr>
+          <th>Provider</th>
+          <th>Data Shared</th>
+          <th>Purpose</th>
+          <th>More Info</th>
+        </tr>
+        <tr>
+          <td><strong>Groq Inc.</strong></td>
+          <td>File names, text snippets (&lt;400 chars), folder names</td>
+          <td>AI classification (llama-3.3-70b model)</td>
+          <td><a href="https://groq.com" target="_blank" rel="noopener">groq.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Supabase Inc.</strong></td>
+          <td>Email, HWID, preferences, session history, plan type, IP, user agent</td>
+          <td>Authentication, database, cloud storage, Edge Functions</td>
+          <td><a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Whop Inc.</strong></td>
+          <td>Payment confirmation and plan type only (we do not send data — Whop notifies us)</td>
+          <td>Payment processing and subscription management</td>
+          <td><a href="https://whop.com/privacy" target="_blank" rel="noopener">whop.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google LLC</strong></td>
+          <td>We request email, name, and profile photo (you choose what to share upon login)</td>
+          <td>OAuth 2.0 authentication</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+        </tr>
+      </table>
+
+      <p>We do not sell, rent, or share your personal data with any other third party. We will only disclose information when required by law or competent authority.</p>
+
+      <h2>4. International Data Transfers</h2>
+      <p>Your data may be transferred and processed in countries other than your own, including the <strong>United States</strong>, where Supabase (infrastructure on AWS, Google Cloud) and Groq servers are located. By using FileSort Pro, you consent to this transfer. We ensure that all our providers comply with adequate legal frameworks (such as the EU-US Data Privacy Framework or Standard Contractual Clauses) for the protection of personal data.</p>
+
+      <h2>5. Data Retention</h2>
+      <p>We retain your data for the following periods:</p>
+      <ul>
+        <li><strong>Account data</strong> (email, HWID, preferences): until you request account deletion.</li>
+        <li><strong>Session logs</strong> (IP, user agent): until the session is revoked or expires.</li>
+        <li><strong>API usage history</strong> (rate limiting): 180 days on your local machine.</li>
+        <li><strong>Data sent to Groq</strong>: not stored by us. Groq may retain it per their own policy.</li>
+        <li><strong>Local data</strong> (history, undo, trial): until you manually delete it or uninstall the application.</li>
+      </ul>
+
+      <h2>6. Data Deletion</h2>
+      <p>You have the right to request deletion of your personal data at any time. To do so:</p>
+      <ol>
+        <li>If you have an active subscription, cancel it first through Whop.</li>
+        <li>Send an email to <a href="mailto:support@filesort.pro">support@filesort.pro</a> requesting data deletion.</li>
+        <li>Alternatively, you can log out and delete local data manually from <code>%APPDATA%\FileSortPro</code> and <code>~\.filesort_history.json</code>.</li>
+      </ol>
+      <p>We will process your request within a maximum of 30 days. Please note that account deletion may affect your access to the application and its features.</p>
+
+      <h2>7. Security</h2>
+      <p>We implement the following security measures to protect your data:</p>
+      <ul>
+        <li><strong>Encryption in transit</strong>: all communications with our servers and third-party services use TLS 1.2/1.3 (HTTPS).</li>
+        <li><strong>Encryption at rest</strong>: session tokens and trial data are encrypted with DPAPI (Windows CryptProtectData). Groq API keys are encrypted with XOR + base64 using a master key.</li>
+        <li><strong>Secure authentication</strong>: OAuth 2.0 with PKCE for login, no shared passwords.</li>
+        <li><strong>Access control</strong>: Supabase Edge Functions validate every request via JWT. Only the authenticated user can access their own data.</li>
+        <li><strong>Anti-tamper</strong>: the trial system stores data in three independent locations (local file, Windows Registry, and server) and detects discrepancies.</li>
+        <li><strong>Rate limiting</strong>: per-plan usage limits to prevent abuse of the AI service.</li>
+      </ul>
+
+      <h2>8. Your Rights</h2>
+      <p>Under the General Data Protection Regulation (GDPR) and applicable laws, you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> the personal data we hold about you.</li>
+        <li><strong>Request correction</strong> of inaccurate or incomplete data.</li>
+        <li><strong>Request deletion</strong> of your data ("right to be forgotten").</li>
+        <li><strong>Restrict processing</strong> of your data in certain circumstances.</li>
+        <li><strong>Export</strong> your data in a structured, machine-readable format (data portability).</li>
+        <li><strong>Revoke</strong> Google OAuth access at any time from your Google account.</li>
+        <li><strong>Lodge a complaint</strong> with your local data protection authority.</li>
+      </ul>
+      <p>To exercise any of these rights, write to us at <a href="mailto:support@filesort.pro">support@filesort.pro</a>.</p>
+
+      <h2>9. Children's Privacy</h2>
+      <p>FileSort Pro is not directed at children under 13 (or 16 in the European Union). We do not knowingly collect personal data from minors. If we discover that we have collected data from a minor without parental consent, we will delete it immediately. If you are a parent or guardian and believe your child has provided us with data, please contact us at <a href="mailto:support@filesort.pro">support@filesort.pro</a>.</p>
+
+      <h2>10. Changes to This Policy</h2>
+      <p>We may update this privacy policy from time to time. If there are material changes, we will notify you through the application, requesting your review and acceptance. The date of the last update appears at the top of this page. We encourage you to review this policy periodically.</p>
+
+      <h2>11. Contact</h2>
+      <p>If you have questions, concerns, or requests regarding this privacy policy or the processing of your personal data, you can contact us:</p>
+      <p>
+        <strong>Email:</strong> <a href="mailto:contact@filesort.pro" class="contact-email">contact@filesort.pro</a><br>
+        <strong>Support:</strong> <a href="mailto:support@filesort.pro" class="contact-email">support@filesort.pro</a>
+      </p>
+      <p>You can also visit our <a href="terms.html">Terms and Conditions</a> for more information about using the application.</p>
     </div>
   </section>
 
@@ -138,19 +451,30 @@
           </div>
           <p>Smart file classification with one click.</p>
         </div>
-        <div class="footer-col">
+        <div class="footer-col" id="footer-contact-es">
           <h4>Contacto</h4>
           <a href="mailto:support@filesort.pro">support@filesort.pro</a>
           <a href="mailto:contact@filesort.pro">contact@filesort.pro</a>
         </div>
-        <div class="footer-col">
+        <div class="footer-col" id="footer-contact-en" style="display:none">
+          <h4>Contact</h4>
+          <a href="mailto:support@filesort.pro">support@filesort.pro</a>
+          <a href="mailto:contact@filesort.pro">contact@filesort.pro</a>
+        </div>
+        <div class="footer-col" id="footer-legal-es">
           <h4>Legal</h4>
           <a href="privacy.html">Política de Privacidad</a>
           <a href="terms.html">Términos y Condiciones</a>
         </div>
+        <div class="footer-col" id="footer-legal-en" style="display:none">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms and Conditions</a>
+        </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 FileSort Pro. Todos los derechos reservados.</p>
+        <p id="footer-copy-es">© 2026 FileSort Pro. Todos los derechos reservados.</p>
+        <p id="footer-copy-en" style="display:none">© 2026 FileSort Pro. All rights reserved.</p>
         <p><a href="mailto:support@filesort.pro">support@filesort.pro</a></p>
       </div>
     </div>
@@ -158,26 +482,53 @@
 
   <script src="assets/js/theme.js"></script>
   <script>
-    document.querySelectorAll('.faq-question').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var item = this.parentElement;
-        var wasActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item.active').forEach(function(el) {
-          el.classList.remove('active');
-        });
-        if (!wasActive) item.classList.add('active');
+    // ── Idioma ──────────────────────────────────────────────────────────
+    var currentLang = 'es';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      var show = lang === 'en' ? 'block' : 'none';
+      var hide = lang === 'en' ? 'none' : 'block';
+
+      document.getElementById('content-en').style.display = show;
+      document.getElementById('content-es').style.display = hide;
+      document.getElementById('footer-contact-en').style.display = show;
+      document.getElementById('footer-contact-es').style.display = hide;
+      document.getElementById('footer-legal-en').style.display = show;
+      document.getElementById('footer-legal-es').style.display = hide;
+      document.getElementById('footer-copy-en').style.display = show;
+      document.getElementById('footer-copy-es').style.display = hide;
+
+      document.querySelector('html').setAttribute('lang', lang);
+      document.getElementById('lang-toggle').textContent = lang === 'en' ? 'ES' : 'EN';
+
+      document.querySelectorAll('.nav-desktop a').forEach(function(a) {
+        var text = a.getAttribute('data-' + lang);
+        if (text) a.textContent = text;
       });
+    }
+
+    var params = new URLSearchParams(window.location.search);
+    var langParam = params.get('lang');
+    if (langParam === 'en' || langParam === 'es') {
+      setLanguage(langParam);
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', function() {
+      setLanguage(currentLang === 'en' ? 'es' : 'en');
     });
+
     document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
       var nav = document.querySelector('.nav-desktop');
       nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
     });
+
     var observer = new MutationObserver(function() {
       var theme = document.documentElement.getAttribute('data-theme');
-      var darkLogos = document.querySelectorAll('#logo-dark-footer');
-      var lightLogos = document.querySelectorAll('#logo-light-footer');
-      darkLogos.forEach(function(el) { el.style.display = theme === 'dark' ? 'block' : 'none'; });
-      lightLogos.forEach(function(el) { el.style.display = theme === 'light' ? 'block' : 'none'; });
+      document.querySelectorAll('#logo-dark-footer, #logo-light-footer').forEach(function(el) {
+        var isDark = el.id === 'logo-dark-footer';
+        el.style.display = theme === 'dark' && isDark ? 'block' : theme === 'light' && !isDark ? 'block' : 'none';
+      });
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   </script>
